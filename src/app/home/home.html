@@ -1,6 +1,19 @@
 <div class="jumbotron masthead">
   <div class="container">
     <h3>ng2-bootstrap幻灯片</h3>
+    <div class="slider">
+      <carousel [interval]="myInterval" [noWrap]="noWrapSlides">
+        <slide *ngFor="#slidez of slides; #index=index"
+               [active]="slidez.active">
+          <img [src]="slidez.image" style="margin:auto;">
 
+          <div class="carousel-caption">
+            <h4>Slide {{index}}</h4>
+
+            <p>{{slidez.text}}</p>
+          </div>
+        </slide>
+      </carousel>
+    </div>
   </div>
 </div>

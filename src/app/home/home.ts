@@ -2,6 +2,9 @@ import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES} from 'angular2/common';
 import {Http} from 'angular2/http';
 
+// self node_modules
+import {CAROUSEL_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+
 import {Title} from './providers/title';
 import {XLarge} from './directives/x-large';
 
@@ -18,7 +21,8 @@ import {XLarge} from './directives/x-large';
   // Doing so will allow Angular to attach our behavior to an element
   directives: [
     ...FORM_DIRECTIVES,
-    XLarge
+    XLarge,
+    CAROUSEL_DIRECTIVES
   ],
   // We need to tell Angular's compiler which custom pipes are in our template.
   pipes: [ ],
@@ -28,9 +32,24 @@ import {XLarge} from './directives/x-large';
   template: require('./home.html')
 })
 export class Home {
+  private myInterval:number = 5000;
+  private noWrapSlides:boolean = false;
+  private slides:Array<any> = [];
+
   // TypeScript public modifiers
   constructor(public title: Title, public http: Http) {
+    for (let i = 0; i < 18; i++) {
+      this.addSlide();
+    }
+  }
 
+  private addSlide() {
+    let num = this.slides.length + 1;
+    this.slides.push({
+      image: `/assets/img/home/${num}.jpg`,
+      text: `${['帅气的', '漂亮的', '性感的', '神奇的'][this.slides.length % 4]}
+      ${['男孩', '女孩', '前端', 'Angular2工程师'][this.slides.length % 4]}`
+    });
   }
 
   ngOnInit() {
