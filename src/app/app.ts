@@ -25,8 +25,8 @@ import {Home} from './home/home';
   { path: '/**', redirectTo: ['Index'] }
 ])
 export class App {
-  name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+  title = 'Angular2 just4fun';
+  url = 'https://github.com/cuitianze';
   constructor() {
 
   }
