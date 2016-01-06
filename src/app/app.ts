@@ -16,24 +16,8 @@ import {Home} from './home/home';
   providers: [ ...FORM_PROVIDERS ],
   directives: [ ...ROUTER_DIRECTIVES ],
   pipes: [],
-  styles: [],
-  template: `
-    <header>
-      <nav>
-        <h1>Hello {{ name }}</h1>
-        <a [routerLink]=" ['Index'] ">Index</a>
-        <a [routerLink]=" ['Home'] ">Home</a>
-      </nav>
-    </header>
-
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-
-    <footer>
-      WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a>
-    </footer>
-  `
+  styles: [ require('./app.css') ],
+  template: require('./app.html')
 })
 @RouteConfig([
   { path: '/', component: Home, name: 'Index' },
