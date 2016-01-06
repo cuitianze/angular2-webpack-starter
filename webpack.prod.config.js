@@ -17,10 +17,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackMd5Hash    = require('webpack-md5-hash');
 var ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 var HOST = process.env.HOST || '0.0.0.0';
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 9999;
 
 var metadata = {
-  title: 'Angular2 Webpack Starter by @gdi2990 from @AngularClass',
+  title: 'Angular2包教不会@dist',
   baseUrl: '/',
   host: HOST,
   port: PORT,
