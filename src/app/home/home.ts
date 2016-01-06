@@ -32,15 +32,19 @@ import {XLarge} from './directives/x-large';
   template: require('./home.html')
 })
 export class Home {
-  private myInterval:number = 5000;
-  private noWrapSlides:boolean = false;
-  private slides:Array<any> = [];
+  private myInterval:  number = 5000;
+  private noWrapSlides: boolean = false;
+  private slides: Array<any> = [];
 
   // TypeScript public modifiers
   constructor(public title: Title, public http: Http) {
     for (let i = 0; i < 18; i++) {
       this.addSlide();
     }
+  }
+
+  ngOnInit() {
+    console.log('hello Home component');
   }
 
   private addSlide() {
@@ -52,8 +56,5 @@ export class Home {
     });
   }
 
-  ngOnInit() {
-    console.log('hello Home component');
-  }
 
 }
